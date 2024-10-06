@@ -1,0 +1,144 @@
+### Sign Up (Register a new user)
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "name": "Bharath",
+  "email": "bharaththota953@gmail.com",
+  "password": "password123"
+}
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "bharaththota953@gmail.com",
+  "password": "password123"
+}
+
+
+### Update User Profile
+PUT http://localhost:5000/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+  "name": "Bharath Thota",
+  "email": "bharaththota953@gmail.com",
+  "phone": "1234567890",
+  "addresses": ["123 Main St", "456 Elm St"]
+}
+
+
+
+### Get User Profile
+GET http://localhost:5000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+###create Restarunt
+
+POST http://localhost:5000/restaurants
+Host: localhost:5000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+  "name": "Bharath Dhaba",
+  "location": "Near Gudimalla",
+  "menu": [
+    {
+      "name": "Margherita Pizza",
+      "description": "Classic pizza with tomato sauce and mozzarella cheese.",
+      "price": 9.99,
+      "availability": true
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "description": "Delicious pizza topped with pepperoni slices.",
+      "price": 11.99,
+      "availability": true
+    }
+  ]
+}
+###
+PUT http://localhost:5000/restaurants/6701fb0e8418338c4d6220a2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+  "name": "Updated Pizza Place",
+  "location": "456 New Pizza St, Food City"
+}
+
+###
+POST http://localhost:5000/restaurants/6701fb0e8418338c4d6220a2/menu
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+  "menu": [
+    {
+      "name": "Margherita Pizza",
+      "description": "Classic pizza with tomatoes, mozzarella cheese, and fresh basil.",
+      "price": 9.99,
+      "availability": true
+    },
+    {
+      "name": "Caesar Salad",
+      "description": "Crisp romaine lettuce with Caesar dressing and croutons.",
+      "price": 7.99,
+      "availability": true
+    }
+  ]
+}
+###
+PUT http://localhost:5000/restaurants/6701fb0e8418338c4d6220a2/menu/6701fd689386878a5b016630
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+  "name": "Updated Pizza Name",
+  "description": "Updated description of the pizza.",
+  "price": 12.99,
+  "availability": false
+}
+###
+POST http://localhost:5000/orders
+Content-Type:application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+    "restaurantId": "6701fb0e8418338c4d6220a2",
+    "items": [
+        {
+            "name": "Margherita Pizza",
+            "quantity": 2
+        }
+    ],
+    "deliveryAddress": "123 Main St, Springfield, IL"
+}
+
+###
+GET http://localhost:5000/orders/6702188039954aeff5608911
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+###
+### Update Order Status
+PUT http://localhost:5000/orders/6702188039954aeff5608911/status
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+
+{
+    "status": "Out for Delivery"
+}
+
+
+### Get All Orders for the Logged In User
+GET http://localhost:5000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE5NjIzMCwiZXhwIjoxNzI4MTk5ODMwfQ.y0nj-TQbvoE6FbFDf6r5eO0aKHOLU0FHE_LQZQdhzPs
+
+###
+
+GET http://localhost:5000/orders/6702188039954aeff5608911/track
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE5NjIzMCwiZXhwIjoxNzI4MTk5ODMwfQ.y0nj-TQbvoE6FbFDf6r5eO0aKHOLU0FHE_LQZQdhzPs
