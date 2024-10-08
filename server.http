@@ -7,7 +7,7 @@ Content-Type: application/json
   "email": "bharaththota953@gmail.com",
   "password": "password123"
 }
-###
+###  User Login
 
 POST http://localhost:5000/login
 Content-Type: application/json
@@ -36,7 +36,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzO
 GET http://localhost:5000/profile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
 
-###create Restarunt
+###Create Restarunt
 
 POST http://localhost:5000/restaurants
 Host: localhost:5000
@@ -61,7 +61,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzO
     }
   ]
 }
-###
+### Update Restaruant
 PUT http://localhost:5000/restaurants/6701fb0e8418338c4d6220a2
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
@@ -71,7 +71,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzO
   "location": "456 New Pizza St, Food City"
 }
 
-###
+###  Insert Menu into Restarunt
 POST http://localhost:5000/restaurants/6701fb0e8418338c4d6220a2/menu
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
@@ -92,7 +92,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzO
     }
   ]
 }
-###
+###  Update menu Details
 PUT http://localhost:5000/restaurants/6701fb0e8418338c4d6220a2/menu/6701fd689386878a5b016630
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
@@ -103,7 +103,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzO
   "price": 12.99,
   "availability": false
 }
-###
+### Get all orders
 POST http://localhost:5000/orders
 Content-Type:application/json
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
@@ -119,18 +119,17 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzOD
     "deliveryAddress": "123 Main St, Springfield, IL"
 }
 
-###
+###  GEt order Details of particular Order
 GET http://localhost:5000/orders/6702188039954aeff5608911
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
 
-###
 ### Update Order Status
 PUT http://localhost:5000/orders/6702188039954aeff5608911/status
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE4ODU5MCwiZXhwIjoxNzI4MTkyMTkwfQ.iiZWFcb-_raJh2JCbrkt7hyH62GazQdoY0Lc43ZnHX8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE5NzgwMCwiZXhwIjoxNzI4MjAxNDAwfQ.5xEKv2hF2Zs_tUrW0YW11ddNe6w1S3P8pPKy3ZZPhKs
 
 {
-    "status": "Out for Delivery"
+    "status": "In Progress"
 }
 
 
@@ -138,7 +137,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzO
 GET http://localhost:5000/orders
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE5NjIzMCwiZXhwIjoxNzI4MTk5ODMwfQ.y0nj-TQbvoE6FbFDf6r5eO0aKHOLU0FHE_LQZQdhzPs
 
-###
+### Track Order
 
 GET http://localhost:5000/orders/6702188039954aeff5608911/track
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDFmODkzODQxODMzOGM0ZDYyMjA5YyIsImlhdCI6MTcyODE5NjIzMCwiZXhwIjoxNzI4MTk5ODMwfQ.y0nj-TQbvoE6FbFDf6r5eO0aKHOLU0FHE_LQZQdhzPs
