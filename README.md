@@ -9,7 +9,7 @@ This project is a backend application for a food delivery platform built with No
         ->npm: Node package manager
 2.Installation
     Clone the repository:
-        git clone https://github.com/your-username/food-delivery-backend.git
+        git clone https://github.com/bharaththota09/backend
         cd food-delivery-backend
     Install the necessary dependencies:
         npm install
