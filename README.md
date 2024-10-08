@@ -16,7 +16,7 @@ This project is a backend application for a food delivery platform built with No
     Environment Variables
         Create a .env file in the root directory and add the following variables:
             MONGODB_URI=mongodb://localhost:27017/myDatabase
-            JWT_SECRET=your_jwt_secret
+            JWT_SECRET='bharath'
             PORT=5000
     To start the server:
         npm start
